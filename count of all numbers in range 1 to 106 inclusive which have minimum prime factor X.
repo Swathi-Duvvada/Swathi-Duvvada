@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ss unsigned long long
+#define MAX 1000001
+int prime_num[MAX];
+ss res[MAX];
+void seive()
+{
+for(int i=2;i<MAX;i++)
+{
+if(prime_num[i]==-1)
+{
+for(int j=i;j<MAX;j+=i)
+{
+if(prime_num[j]==-1)
+{
+prime_num[j]=i;
+res[i]++;
+}
+}
+}
+}
+}
+int main()
+{
+int test;
+cin>>test;
+memset(prime_num,-1,sizeof(prime_num));
+memset(res,0,sizeof(res));
+seive();
+while(test--)
+{
+ss x;
+cin>>x;
+cout<<res[x]<<endl;
+}
+}

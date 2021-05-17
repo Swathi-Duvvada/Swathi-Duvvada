@@ -1,0 +1,15 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+unsigned long long factorial(int N)
+{
+    const unsigned int M = 1000000007;
+    unsigned long long f = 1;
+ 
+    for (int i = 1; i <= N; i++)
+        f = f * i;             
+     return f % M;
+}
+int main()
+{
+unsigned long long factorial( N);

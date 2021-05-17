@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int setKthBit(int n, int k)
+{
+    // kth bit of n is being set by one using or operation 1010 is oring 
+    return ((1 << k) | n);
+}
+ int main()
+{
+    int n = 10, k = 2;
+    cout << "Kth bit set number = "
+         << setKthBit(n, k);
+    return 0;
+}

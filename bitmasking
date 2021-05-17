@@ -1,0 +1,5 @@
+class Solution {
+    static long convertEvenBitToZero(long n) {
+        return (n & 0xAAAAAAAA);
+    }
+}//bit masking method

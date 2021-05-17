@@ -12,4 +12,7 @@ unsigned long long factorial(int N)
 }
 int main()
 {
-unsigned long long factorial( N);
+cout << unsigned long long factorial( N); << endl;
+    
+    return 0;
+}

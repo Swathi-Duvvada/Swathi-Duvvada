@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int maxConsecutiveOnes(int N)
+{
+    // let us assing  count to  0  to count the iteratins untill unless the N becomes 0
+    int count = 0;
+    while (N!=0)
+    {
+        // This operation reduces length
+        // of every sequence of 1s by one.
+        N = (N& (N << 1));//here first we are taking N value in binary form after thar shift left one bit and again perform AND operation on N and N<<1 for Eg:N=5
+                           // means binary value is:..... 101
+                                               // N<<1:...010 
+                                               //....................
+                                               //           111 now N valu is<....this
+                                                 // N<<1:...110 
+                                               //....................
+                                               //           110 now N valu is<....this   
+                                                 // N<<1:...100 
+                                               //....................
+                                               //           100 now N valu is<....this 
+                                                 // N<<1:...000 
+                                               //....................
+                                               //           000 now N valu is<....this so finally it become 0 then The number of iterations required to reach 0 is 
+                                               // so actually length of the longest consecutive sequence of 1s.
+        count++;
+    }
+ 
+    return count;
+}
+ 
+// Driver code
+int main()
+{
+    //cout << maxConsecutiveOnes(14) << endl;
+    int x;
+    cin>>x;
+    cout << maxConsecutiveOnes(x) << endl;
+    
+    return 0;
+}
+     

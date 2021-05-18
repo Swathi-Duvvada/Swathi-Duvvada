@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+ 
+// Iterative function to check if the given string is a palindrome or not
+bool Pal(string s)
+{
+    int l = 0;
+    int r = s.len()-1;
+ 
+    while (l < r)
+    {
+        // if a mismatch happens
+        if (s[l] != s[r]) {
+            return false;
+        }
+ 
+        l++;
+        r--;
+    }
+ 
+    return true;
+}
+ 
+int main()
+{
+    string s = "liril";
+ 
+    if (Pal(s)) {
+        cout << "Palindrome";
+    }
+    else {
+        cout << "Not Palindrome";
+    }
+ 
+    return 0;
+}
+
+

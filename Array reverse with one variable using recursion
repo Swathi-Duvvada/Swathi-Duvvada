@@ -1,0 +1,29 @@
+void reverse_arr(int a[],int len);
+int main() {
+    int a[100];
+    int len ;
+    printf("Enter the size of the array: ");
+    scanf("%d",&len);
+    printf("Elements of the array: ");
+    for(int i = 0; i<len; i++){
+        scanf("%d",&a[i]); }
+    for(int i = 0; i<len; i++){
+        printf"%d",a[i]);}
+        reverse_arr(a, 3);
+    for(int i = 0; i<len; i++){
+               printf"%d",a[i]);}
+}
+//Recursive function for Reversing array using only length
+void reverse_arr(int a[],int len){
+    if(size ==0){
+        return ;
+    }
+    else{
+        int temp;
+        int i= 0;
+        temp = a[i];
+        a[i]= a[size-1];
+        a[size -1] = temp;
+        reverse_arr(a, size-1);
+    }      
+}

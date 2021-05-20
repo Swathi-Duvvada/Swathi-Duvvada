@@ -1,0 +1,25 @@
+#include<iostream>
+#include<bits/std c++.h>
+using namespace std;
+string str="abc";
+int n=str.size();
+void print permutation(string ss,int frq[])
+{
+if(str.size()==ss.size())
+{
+cout<<ss<<end;
+return 0;
+}
+for(int i=0;i<n;i++)
+{
+if(frq[i]==0)
+{
+print permutations(ss+s[i],frq);
+frq[i]=0;
+}
+int main(){
+string ss="";
+int a[n]={0};
+printpermutations(ss,a);
+return 0;
+}

@@ -1,0 +1,114 @@
+USING SWITCH CASE
+
+#include <bits/stdc++.h>
+using namespace std;
+ // function to check if brackets are valid or not
+ bool isValid(string s)
+{ 
+    stack<char> st;
+    char x;
+ 
+    // Traversing the Expression
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == '(' || s[i] == '['
+            || s[i] == '{')
+        {
+            // Push the element in the stack
+            st.push(s[i]);
+            continue;
+        }
+ 
+         if (st.empty())
+            return false;
+ 
+        switch (s[i]) {
+        case ')':
+             
+            // Store the top element in a
+            x = st.top();
+            st.pop();
+            if (x == '{' || x == '[')
+                return false;
+            break;
+ 
+        case '}':
+ 
+            // Store the top element in b
+            x = st.top();
+            st.pop();
+            if (x == '(' || x == '[')
+                return false;
+            break;
+ 
+        case ']':
+ 
+            // Store the top element in c
+            x = st.top();
+            st.pop();
+            if (x == '(' || x == '{')
+                return false;
+            break;
+        }
+    }
+ 
+    // Check Empty Stack
+    return (st.empty());
+}
+ 
+// Driver code
+int main()
+{
+    string s = "{()}[]";
+ 
+    // Function call
+    if (isValid(s)) 
+        cout << "valid";
+    else
+        cout << "Not valid";
+    return 0;
+}
+
+
+or
+
+
+
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char>st;
+        for(int i=0;i<s.size();i++)
+        {
+            if(st.empty())
+                st.push(s[i]);
+            else if(s[i]==')')
+            {
+                if(st.top()=='(')
+                    st.pop();
+                else
+                    return false;
+            }
+            else if(s[i]=='}')
+            {
+                if(st.top()=='{')
+                    st.pop();
+                else
+                    return false;
+            }
+            else if(s[i]==']')
+            {
+                if(st.top()=='[')
+                    st.pop();
+                else
+                    return false;
+            }
+            else
+                st.push(s[i]);
+        }
+        if(st.empty())
+            return true;
+        else
+            return false;
+    }
+};

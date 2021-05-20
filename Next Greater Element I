@@ -1,0 +1,31 @@
+class Solution {
+public:
+          vector<int> output(vector<int> arr){
+        int n = arr.size();
+    
+        vector<int> ans(n,0);
+        stack<int> st;
+        st.push(arr[n-1]);
+        ans[n-1] = -1;
+    
+        for(int i=n-2;i>=0;i--){
+			while(!st.empty() and arr[i]>=st.top()) st.pop(); 
+				int ng = st.empty() ? (-1) : st.top();
+				ans[i] = ng;
+				st.push(arr[i]);
+			}
+        return ans;
+    }
+
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> ans = output(nums2);
+        vector<int> res;
+        for(int i=0;i<nums1.size();i++)
+            for(int j=0;j<nums2.size();j++)
+                if(nums1[i]==nums2[j])
+                    res.push_back(ans[j]);
+        
+        return res; 
+    
+    }
+};

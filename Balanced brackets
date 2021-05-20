@@ -72,4 +72,34 @@ stack<char>st;
 int f1=1;
 for(auto it:s)
 {
-if(it=='[')
+if(it=='['|| it=='{'|| it=='(' )
+{
+st.push(it);
+}
+else{
+if(it==']' && !st.empty() && st.top()=='[')
+{
+st.pop();
+}
+else if(it=='}' && !st.empty() && st.top()=='{')
+{
+st.pop();
+}
+else if(it==')' && !st.empty() && st.top()=='(')
+{
+st.pop();
+}
+else{
+f1=0;
+break;
+}
+}
+}
+if(st.size()!=0 || f1==0)
+{
+cout<<"no";
+}
+else
+cout<<"yes";
+}
+
